@@ -10,7 +10,7 @@ from pytube import YouTube
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token="")
+bot = Bot(token="7148045214:AAGJf9OTER-XAKviaxCbFwb8uPWOobOOrjk")
 dp = Dispatcher()
 
 
@@ -33,7 +33,7 @@ async def process_video_url(message: types.Message):
     print('Загрузка завершена')
 
     video = FSInputFile(video_file_absolute)
-    await bot.send_video(message.chat.id, video=video)
+    await bot.send_video(message.chat.id, supports_streaming=True, video=video)
     os.remove(video_file_absolute)
     print('Виде удалено')
 
