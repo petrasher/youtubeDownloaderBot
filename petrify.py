@@ -7,14 +7,18 @@ from aiogram.types import FSInputFile
 from aiogram.filters import Command
 from pytube import YouTube
 import subprocess
+from pytube.innertube import _default_clients
+
+
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token="6861882774:AAEBWXTBOy3XilHT4Uix0qT0WPYwS2LgmLQ")
+bot = Bot(token="7148045214:AAGJf9OTER-XAKviaxCbFwb8uPWOobOOrjk")
 dp = Dispatcher()
 
 MAX_FILE_SIZE_MB = 48
 BYTES_PER_MB = 1024 * 1024
+_default_clients["ANDROID_MUSIC"] = _default_clients["ANDROID_CREATOR"]
 
 @dp.message(Command("start"))
 async def start_download(message: types.Message):
